@@ -10,6 +10,8 @@ RUN pacman -S --noconfirm \
     sudo \
     wget \
     git \
+    bash-autocompletion \
+    tmux \
     openssh \
     && systemctl enable sshd.service
 
@@ -41,7 +43,8 @@ RUN pacman -S --noconfirm \
 # Install IDEs (helix, emacs)
 RUN pacman -S --noconfirm \
     helix \
-    emacs
+    emacs \
+    neovim
 
 # Configure pacman
 RUN sed -i "s|#Color|Color|" /etc/pacman.conf
